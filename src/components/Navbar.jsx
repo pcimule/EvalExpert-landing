@@ -82,7 +82,7 @@ function LanguageDropdown({ lang, languages, changeLang }) {
   )
 }
 
-const SIGNIN_URL = `${import.meta.env.VITE_APP_URL || 'https://evalexpert-app.onrender.com'}/auth/signin`
+const SIGNIN_URL = `${import.meta.env.VITE_APP_URL || 'https://app.eval-expert.pro'}/auth/signin`
 
 export default function Navbar() {
   const { t, lang, changeLang, languages } = useTranslation()
