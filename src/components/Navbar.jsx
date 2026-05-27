@@ -82,6 +82,8 @@ function LanguageDropdown({ lang, languages, changeLang }) {
   )
 }
 
+const SIGNIN_URL = `${import.meta.env.VITE_APP_URL || 'https://evalexpert-app.onrender.com'}/auth/signin`
+
 export default function Navbar() {
   const { t, lang, changeLang, languages } = useTranslation()
   const [scrolled, setScrolled]   = useState(false)
@@ -142,7 +144,7 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center gap-2">
             <LanguageDropdown lang={lang} languages={languages} changeLang={changeLang} />
             <a
-              href="https://app.evalexpertpro.com/auth"
+              href={SIGNIN_URL}
               className="px-4 py-2 text-sm font-medium text-[#7d8590] hover:text-[#e6edf3] transition-colors duration-150"
             >
               {t.nav.signIn}
@@ -203,7 +205,7 @@ export default function Navbar() {
               </div>
             </div>
             <hr className="border-[#21262d] my-1" />
-            <a href="https://app.evalexpertpro.com/auth" className="px-4 py-2.5 text-sm font-medium text-[#7d8590]">{t.nav.signIn}</a>
+            <a href={SIGNIN_URL} className="px-4 py-2.5 text-sm font-medium text-[#7d8590]">{t.nav.signIn}</a>
             <a href="#contact" onClick={e => handleNav(e, '#contact')} className="btn-primary justify-center text-sm mt-1">
               {t.nav.startFree}
             </a>
