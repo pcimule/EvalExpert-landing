@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-[#080d18] text-[#e6edf3] antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #388bfd 0%, #1f6feb 40%, #a78bfa 100%);
+    background-size: 200%;
+  }
+
+  .gradient-text-animate {
+    @apply gradient-text;
+    animation: gradientX 6s ease infinite;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white
+           transition-all duration-200 hover:scale-[1.02] active:scale-[0.98];
+    background: linear-gradient(135deg, #1f6feb, #388bfd);
+    box-shadow: 0 0 20px rgba(31, 111, 235, 0.35);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 32px rgba(56, 139, 253, 0.5);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold
+           border border-[#30363d] text-[#e6edf3] bg-[#161b22]/60 backdrop-blur-sm
+           transition-all duration-200 hover:border-[#388bfd] hover:bg-[#1f6feb]/10;
+  }
+
+  .glass-card {
+    @apply bg-[#161b22]/70 border border-[#21262d] rounded-2xl backdrop-blur-sm
+           transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-[#388bfd]/40 bg-[#161b22]/90;
+    box-shadow: 0 0 24px rgba(31, 111, 235, 0.08);
+  }
+
+  .section-label {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold
+           bg-[#1f6feb]/15 text-[#388bfd] border border-[#1f6feb]/25 mb-4;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl xl:text-5xl font-bold text-[#e6edf3] leading-tight;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-[#7d8590] leading-relaxed max-w-2xl;
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(31,111,235,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31,111,235,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .noise-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .glow-orb {
+    @apply absolute rounded-full pointer-events-none;
+    filter: blur(80px);
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .text-balance { text-wrap: balance; }
+
+  .animate-delay-100 { animation-delay: 0.1s; }
+  .animate-delay-200 { animation-delay: 0.2s; }
+  .animate-delay-300 { animation-delay: 0.3s; }
+  .animate-delay-400 { animation-delay: 0.4s; }
+  .animate-delay-500 { animation-delay: 0.5s; }
+
+  .opacity-0-start { opacity: 0; }
+}
+
+/* Scroll-triggered reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navbar scroll state */
+.navbar-scrolled {
+  background: rgba(8, 13, 24, 0.92) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(33, 38, 45, 0.8);
+}
+
+/* Mock UI cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+.cursor-blink { animation: blink 1.2s step-end infinite; }
+
+/* Gradient border */
+.gradient-border {
+  position: relative;
+  border-radius: 16px;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1f6feb, #388bfd, #a78bfa);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to   { width: 100% }
+}
