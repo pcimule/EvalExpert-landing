@@ -8,6 +8,7 @@ const planColors = {
 }
 
 const fmt = (v, unlimitedLabel) => v === -1 ? (unlimitedLabel || 'Unlimited') : v
+const parsePrice = (s) => parseFloat(String(s).replace(',', '.'))
 
 export default function Pricing() {
   const { t } = useTranslation()
@@ -92,7 +93,7 @@ export default function Pricing() {
                   ) : (
                     <>
                       <div className="inline-flex items-center gap-1 px-2 py-0.5 bg-orange-500/15 border border-orange-500/25 rounded-full text-[10px] font-bold text-orange-400 mb-2">
-                        {plan.originalPrice ? `${Math.round((1 - parseFloat(plan.price) / parseFloat(plan.originalPrice)) * 100)}% ${p.discountBadge || 'OFF'}` : ''}
+                        {plan.originalPrice ? `${Math.round((1 - parsePrice(plan.price) / parsePrice(plan.originalPrice)) * 100)}% ${p.discountBadge || 'OFF'}` : ''}
                       </div>
                       <div className="flex items-end gap-1.5 mb-0.5">
                         <span className="text-4xl font-bold text-[#e6edf3]">${plan.price}</span>

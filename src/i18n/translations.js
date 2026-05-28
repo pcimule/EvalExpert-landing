@@ -277,7 +277,7 @@ const en = {
     ],
     status: 'All systems operational',
     legal: ['Privacy Policy','Terms of Service','Cookie Policy','GDPR'],
-    copyright: '© 2025 EvalExpert Pro. All rights reserved.',
+    copyright: '© 2025 EvalExpert Pro by ProjexaAI. All rights reserved.',
   },
 }
 
@@ -498,7 +498,7 @@ const es = {
     ],
     status: 'Todos los sistemas operativos',
     legal: ['Política de Privacidad','Términos de Servicio','Política de Cookies','RGPD'],
-    copyright: '© 2025 EvalExpert Pro. Todos los derechos reservados.',
+    copyright: '© 2025 EvalExpert Pro by ProjexaAI. Todos los derechos reservados.',
   },
 }
 
@@ -704,7 +704,7 @@ const pt = {
     ],
     status: 'Todos os sistemas operacionais',
     legal: ['Política de Privacidade','Termos de Serviço','Política de Cookies','LGPD/GDPR'],
-    copyright: '© 2025 EvalExpert Pro. Todos os direitos reservados.',
+    copyright: '© 2025 EvalExpert Pro by ProjexaAI. Todos os direitos reservados.',
   },
 }
 
@@ -910,7 +910,7 @@ const fr = {
     ],
     status: 'Tous les systèmes opérationnels',
     legal: ['Politique de confidentialité','Conditions d\'utilisation','Politique de cookies','RGPD'],
-    copyright: '© 2025 EvalExpert Pro. Tous droits réservés.',
+    copyright: '© 2025 EvalExpert Pro by ProjexaAI. Tous droits réservés.',
   },
 }
 
@@ -1116,7 +1116,7 @@ const de = {
     ],
     status: 'Alle Systeme betriebsbereit',
     legal: ['Datenschutzerklärung','Nutzungsbedingungen','Cookie-Richtlinie','DSGVO'],
-    copyright: '© 2025 EvalExpert Pro. Alle Rechte vorbehalten.',
+    copyright: '© 2025 EvalExpert Pro by ProjexaAI. Alle Rechte vorbehalten.',
   },
 }
 

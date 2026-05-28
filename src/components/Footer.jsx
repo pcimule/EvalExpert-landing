@@ -21,9 +21,12 @@ const Logo = () => (
                     group-hover:bg-[#388bfd] transition-colors duration-200">
       <BrainIcon />
     </div>
-    <div className="flex items-baseline gap-0">
-      <span className="font-semibold text-[#e6edf3] text-lg leading-none">EvalExpert</span>
-      <span className="text-[#388bfd] font-semibold text-lg leading-none"> Pro</span>
+    <div className="flex flex-col">
+      <div className="flex items-baseline gap-0">
+        <span className="font-semibold text-[#e6edf3] text-lg leading-none">EvalExpert</span>
+        <span className="text-[#388bfd] font-semibold text-lg leading-none"> Pro</span>
+      </div>
+      <span className="text-[#7d8590] text-[10px] leading-none mt-0.5">by ProjexaAI</span>
     </div>
   </a>
 )
